@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+import { EventEmitter } from '@angular/core';
+
 
 interface User {
   username: string;
   password: string;
   rol: string;
+  qrEscaneado: boolean;
 }
 
 @Injectable({
@@ -15,6 +18,8 @@ export class AuthenticationService {
   public autenticado: boolean = false;
   public rol: string = '';
   public username: string = ''; // Agrega la propiedad username
+  public usuarioActualizado: EventEmitter<string> = new EventEmitter<string>();
+
 
   private local!: Storage;
 
@@ -31,31 +36,37 @@ export class AuthenticationService {
         username: 'dontaka@profesor.duoc.cl',
         password: 'taka123',
         rol: 'profesor',
+        qrEscaneado: false,
       },
       {
-        username: 'luartegay@profesor.duoc.cl',
-        password: 'luartegay',
-        rol: 'profesor',
+        username: 'juan.gom@duocuc.cl',
+        password: 'juan123',
+        rol: 'alumno',
+        qrEscaneado: false,
       },
       {
         username: 'di.sanchez@duocuc.cl',
         password: 'diego123',
         rol: 'alumno',
+        qrEscaneado: false,
       },
       {
         username: 'vic.moralesl@duocuc.cl',
         password: 'vicente123',
         rol: 'alumno',
+        qrEscaneado: false,
       },
       {
         username: 'user', //PRUEBAS
         password: '',
         rol: 'alumno',
+        qrEscaneado: false,
       },
       {
         username: 'admin', //PRUEBAS
         password: '',
         rol: 'profesor',
+        qrEscaneado: false,
       },
     ];
 
@@ -92,4 +103,19 @@ export class AuthenticationService {
     const correoExistente = users.some((us) => us.username === correo);
     return correoExistente;
   }
+
+  async actualizarQREscaneado(username: string) {
+    const users: User[] = (await this.local.get('users')) || [];
+    const userIndex = users.findIndex((us) => us.username === username);
+  
+    if (userIndex !== -1) {
+      users[userIndex].qrEscaneado = true;
+      this.local.set('users', users);
+
+      // Emitir evento de actualización
+      this.usuarioActualizado.emit(username);
+    }
+  }
+  
+
 }

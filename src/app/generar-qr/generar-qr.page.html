@@ -18,7 +18,7 @@
     <ng-container *ngIf="authService.rol === 'profesor'">
       <app-servicios [name]="'qr-code-sharp'" [texto]="'Generar QR'" (click)="generarQR()"></app-servicios>
       <br>
-      <app-servicios [name]="'school'" [texto]="'Visualizar Lista'"></app-servicios>
+      <app-servicios [routerLink]="'/lista'" [name]="'school'" [texto]="'Visualizar Lista'"></app-servicios>
     </ng-container>
 
     <ng-container *ngIf="authService.rol === 'alumno'"  >

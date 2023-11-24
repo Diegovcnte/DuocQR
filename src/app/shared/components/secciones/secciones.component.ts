@@ -13,20 +13,21 @@ export class SeccionesComponent  implements OnInit {
   /////// Logica funcionamiento del boton por horario
   BotonFuncionando(buttonIndex:number): boolean {
     const tiempoActual = new Date();
-    const  horaActual = tiempoActual.getHours();
+    const  horaActual = tiempoActual.getUTCHours();
+
+
 
     switch (buttonIndex){
       case 0:
-        return horaActual  >= 8 && horaActual < 10;
+        return horaActual  >= 11 && horaActual < 13; // de 8 a 10 hrs
       case 1:
-        return horaActual >  10 && horaActual < 12;
+        return horaActual >=  13 && horaActual < 15; //de 10 a 12 hrs
       case 2:
-        return horaActual >  12 && horaActual < 14;
+        return horaActual >=  15 && horaActual < 17; //de 12 a 14 hrs 
       case 3:
-        return horaActual >  14 && horaActual < 16;
+        return horaActual >=  17 && horaActual < 19; // de 14 a 16 hrs
       case 4:
-      return (horaActual >= 0 && horaActual < 5) || (horaActual >= 16 && horaActual < 18); // por motivos de prueba
-
+      return horaActual >= 19 && horaActual < 24; // de 16 a 18 hrs
 
       default:
         return false;

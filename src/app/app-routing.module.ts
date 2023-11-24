@@ -40,9 +40,16 @@ const routes: Routes = [
   },
 
   {
+    path: 'lista',
+    loadChildren: () => import('./lista/lista.module').then( m => m.ListaPageModule)
+  },
+
+  {
     path: '**',
     loadChildren: () => import('./error-page/error-page.module').then( m => m.ErrorPagePageModule)
   },
+
+
 
  
 

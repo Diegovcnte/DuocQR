@@ -9,6 +9,9 @@ import { MainFormComponent } from './components/main-form/main-form.component';
 import { RouterModule } from '@angular/router';
 import { SeccionesComponent } from './components/secciones/secciones.component';
 import { ServiciosComponent } from './components/servicios/servicios.component';
+import { ListandoComponent } from './components/listando/listando.component';
+import { AuthenticationService } from '../servicios/autentication.service';
+
 
 
 
@@ -20,6 +23,7 @@ import { ServiciosComponent } from './components/servicios/servicios.component';
     MainFormComponent,
     SeccionesComponent,
     ServiciosComponent,
+    ListandoComponent,
   ],
   exports:[
     HeaderComponent,
@@ -28,6 +32,7 @@ import { ServiciosComponent } from './components/servicios/servicios.component';
     MainFormComponent,
     SeccionesComponent,
     ServiciosComponent,
+    ListandoComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +43,8 @@ import { ServiciosComponent } from './components/servicios/servicios.component';
   ],
   providers:[
     DatePipe,
+    AuthenticationService
+
   ]
 })
 export class SharedModule { }

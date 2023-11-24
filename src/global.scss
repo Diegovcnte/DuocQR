@@ -39,5 +39,17 @@
     font-weight: bold;
     font-size: 16px;
   }
-  
+  .boton-ingresar2 {
+    position: fixed;
+    bottom: 30px;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 180px; 
+    padding: 10px 15px; 
+    text-align: center;
+    --background: #063779;
+    text-transform: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
   
