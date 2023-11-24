@@ -30,9 +30,22 @@ const routes: Routes = [
     loadChildren: () => import('./confirmacion-restablecer/confirmacion-restablecer.module').then( m => m.ConfirmacionRestablecerPageModule)
   },
   {
+    path: 'generar-qr',
+    loadChildren: () => import('./generar-qr/generar-qr.module').then( m => m.GenerarQRPageModule)
+  },
+
+  {
+    path: 'scann-qr',
+    loadChildren: () => import('./scann-qr/scann-qr.module').then( m => m.ScannQRPageModule)
+  },
+
+  {
     path: '**',
     loadChildren: () => import('./error-page/error-page.module').then( m => m.ErrorPagePageModule)
   },
+
+ 
+
 ];
 
 @NgModule({

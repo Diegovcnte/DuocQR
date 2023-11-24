@@ -1,1 +1,5 @@
-<div class="triangulo"></div>
+<div class="triangulo">
+    <ion-buttons slot="start">
+        <ion-back-button class="bajando" *ngIf="backButton" [defaultHref]="backButton"></ion-back-button>
+    </ion-buttons>
+</div>

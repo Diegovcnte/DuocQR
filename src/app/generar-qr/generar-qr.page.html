@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <app-main-title title="Seleccione el servicio:"></app-main-title>
+
+    <!-- Muestra el código QR -->
+    <img *ngIf="qrCodeData" [src]="qrCodeData" alt="Código QR generado" />
+
+    <br>
+    <ion-button [routerLink]="['/feed']" class="boton-ingresar">volver</ion-button>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Utiliza el atributo disabled para controlar la disponibilidad del botón -->
+    <ng-container *ngIf="authService.rol === 'profesor'">
+      <app-servicios [name]="'qr-code-sharp'" [texto]="'Generar QR'" (click)="generarQR()"></app-servicios>
+      <br>
+      <app-servicios [name]="'school'" [texto]="'Visualizar Lista'"></app-servicios>
+    </ng-container>
+
+    <ng-container *ngIf="authService.rol === 'alumno'"  >
+      <br>
+      <br>
+      <app-servicios [name]="'camera'" [texto]="'Escanear QR'" [routerLink]="'/scann-qr'"></app-servicios>
+    </ng-container>
+
+  </div>
+
+  <app-triangle backButton="feed"></app-triangle>
+</ion-content>
+
+<ion-footer collapse="fade"></ion-footer>

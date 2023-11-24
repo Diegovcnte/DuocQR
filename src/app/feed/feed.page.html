@@ -6,11 +6,13 @@
   
   <div class="ion-text-center">
     
-    <app-main-title title="Bienvenido {{usuario}}" subtitle="Seleccione su sección"s></app-main-title>
+    <app-main-title title="Bienvenido {{usuario}}" subtitle="Seleccione su sección"></app-main-title>
 
+
+    <app-secciones></app-secciones>
 
     <br>
-    <ion-button [routerLink]="['/home']" class="boton-ingresar">aceptar</ion-button>
+    <ion-button (click)="cerrarSesion()" class="boton-ingresar">Cerrar Sesión</ion-button>
   </div>
   
 

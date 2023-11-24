@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-triangle',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./triangle.component.scss'],
 })
 export class TriangleComponent  implements OnInit {
+
+  @Input() backButton!: string;
 
   constructor() { }
 

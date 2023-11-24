@@ -47,6 +47,16 @@ export class AuthenticationService {
         password: 'vicente123',
         rol: 'alumno',
       },
+      {
+        username: 'user', //PRUEBAS
+        password: '',
+        rol: 'alumno',
+      },
+      {
+        username: 'admin', //PRUEBAS
+        password: '',
+        rol: 'profesor',
+      },
     ];
 
     await this.local.set('users', users);
