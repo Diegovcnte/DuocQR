@@ -71,3 +71,5 @@ Thumbs.db
 # ignoreeee
 .angular
 node_modules
+android
+www

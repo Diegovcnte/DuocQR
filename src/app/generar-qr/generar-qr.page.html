@@ -24,7 +24,7 @@
     <ng-container *ngIf="authService.rol === 'alumno'"  >
       <br>
       <br>
-      <app-servicios [name]="'camera'" [texto]="'Escanear QR'" [routerLink]="'/scann-qr'"></app-servicios>
+      <app-servicios [name]="'camera'" [texto]="'Escanear QR'" (click)="iniciarEscaneo()"></app-servicios>
     </ng-container>
 
   </div>

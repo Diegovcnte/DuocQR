@@ -10,10 +10,18 @@
     <div class="ion-text-center">
       <app-main-title title="Lista" subtitle="Aquí puede visualizar la asistencia en tiempo real"></app-main-title>
       <app-listando alumno="Alumno: Diego Sánchez (di.sanchez)" namee="person-outline"></app-listando>
+      <br>
       <app-listando alumno="Alumno: Vicente Morales (vic.moralesl)" namee="person-outline"></app-listando>
+      <br>
       <app-listando alumno="Alumno: Juan Gomez (juan.gom)" namee="person-outline"></app-listando>
     </div>
+
+    <br>
+    <br>
+    <ion-button [routerLink]="['/generar-qr']" class="boton-ingresar">volver</ion-button>
   </ion-content>
+
+  <app-triangle></app-triangle>
   
   
 
