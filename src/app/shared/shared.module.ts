@@ -43,7 +43,7 @@ import { AuthenticationService } from '../servicios/autentication.service';
   ],
   providers:[
     DatePipe,
-    AuthenticationService
+    
 
   ]
 })

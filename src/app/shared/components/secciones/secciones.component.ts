@@ -27,7 +27,7 @@ export class SeccionesComponent  implements OnInit {
       case 3:
         return horaActual >=  17 && horaActual < 19; // de 14 a 16 hrs
       case 4:
-      return horaActual >= 19 && horaActual < 24; // de 16 a 18 hrs
+      return horaActual >= 0 && horaActual < 5; // de 16 a 18 hrs (19 a 21 la real cambiada por temas de pruebas)
 
       default:
         return false;
